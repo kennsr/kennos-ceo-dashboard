@@ -5,7 +5,6 @@
     "lastSync": "2026-08-10"
   },
   "kpis": [
-    { "label": "Received to date", "value": "$1,240", "foot": "Airlearn #1 $1,000 + 10x final $240", "color": "g" },
     { "label": "Pending — Airlearn final", "value": "$2,733.33", "foot": "🟡 Not arrived yet · expected this month", "color": "b" },
     { "label": "Phrasly · Aug forecast", "value": "~$3,115", "foot": "$315 booked · $4,200/mo potential run-rate", "color": "v" },
     { "label": "Campaigns", "value": "10", "foot": "4 active · 2 upcoming · 1 closed · 1 terminated · 1 cancelled · 1 unknown", "color": "s" }
@@ -24,14 +23,13 @@
     { "name": "Polifly", "value": "TBD", "widthPct": 14, "style": "q" }
   ],
   "revenueNote": "Not charted: Travelink — cancelled, $0 forecast · Freebuff — unknown, stale, needs data capture.",
-  "donut": {
-    "totalLabel": "$1.24k",
-    "totalSub": "received",
-    "slices": [
-      { "name": "Airlearn #1 (12 Jul)", "amount": "$1,000", "color": "#2a78d6", "dasharray": "273.63 339.29", "dashoffset": "0" },
-      { "name": "10x final settlement", "amount": "$240", "color": "#f0a516", "dasharray": "65.66 339.29", "dashoffset": "-273.63" }
-    ],
-    "note": "Airlearn's $2,733.33 final payment and Phrasly's ~$3,115 Aug forecast are not yet in hand — tracked separately above."
+  "received": {
+    "defaultMode": "mtd",
+    "note": "Airlearn's $2,733.33 final payment and Phrasly's ~$3,115 Aug forecast are not yet in hand — tracked separately above.",
+    "transactions": [
+      { "label": "Airlearn #1", "sublabel": "paid 12 Jul", "amount": 1000, "date": "2026-07-12", "color": "#2a78d6" },
+      { "label": "10x final settlement", "sublabel": "collected — CONFIRM DATE", "amount": 240, "date": "2026-07-28", "color": "#f0a516" }
+    ]
   },
   "campaigns": [
     { "icon": "🟢", "name": "Phrasly", "status": "Active · ramping (new)", "detail": "$315 booked so far. ~$140/wk at 4 vids/day (≥1k views/platform) → ~$3,115 forecast for Aug. $4,200/mo potential at full scale.", "style": "ok" },

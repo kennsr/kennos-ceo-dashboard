@@ -52,11 +52,19 @@
   /* KPI */
   .kpi{position:relative;overflow:hidden;}
   .kpi .k-label{font-size:12px;color:var(--ink2);margin-bottom:9px;}
+  .kpi .k-label-row{display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:9px;flex-wrap:wrap;}
   .kpi .k-val{font-size:30px;font-weight:770;letter-spacing:-.03em;line-height:1;}
   .kpi .k-foot{font-size:11px;color:var(--muted);margin-top:8px;}
   .kpi .k-bar{position:absolute;left:0;top:0;bottom:0;width:5px;}
   .kpi.g .k-bar{background:var(--green);} .kpi.b .k-bar{background:var(--blue);}
   .kpi.v .k-bar{background:var(--violet);} .kpi.s .k-bar{background:var(--slate);}
+
+  /* mode toggle (MTD / all time) */
+  .mode-toggle{display:inline-flex;background:var(--grid);border-radius:999px;padding:2px;gap:1px;flex-shrink:0;}
+  .mode-toggle button{border:none;background:transparent;font-size:9.5px;font-weight:750;letter-spacing:.02em;
+    padding:4px 8px;border-radius:999px;cursor:pointer;color:var(--ink2);white-space:nowrap;}
+  .mode-toggle button.active{background:#fff;color:var(--ink);box-shadow:var(--shadow);}
+  .mode-toggle button:hover:not(.active){color:var(--ink);}
 
   /* banner */
   .banner{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#f4f0ff,#eef4fd);
@@ -78,7 +86,7 @@
   .hb .fl.c .v{color:#fff;} .hb .fl.u .v{color:var(--violet);} .hb .fl.f .v{color:var(--ink2);} .hb .fl.q .v{color:var(--muted);font-weight:650;}
   .lg{display:flex;gap:14px;margin-top:15px;font-size:11px;color:var(--ink2);flex-wrap:wrap;}
   .lg span{display:flex;align-items:center;gap:6px;}
-  .sw{width:14px;height:11px;border-radius:3px;display:inline-block;}
+  .sw{width:18px;height:13px;border-radius:3px;display:inline-block;flex-shrink:0;}
   .sw.c{background:linear-gradient(90deg,#2a78d6,#3f88e6);}
   .sw.u{background:repeating-linear-gradient(135deg,#e0d9fb,#e0d9fb 4px,#f4f0ff 4px,#f4f0ff 8px);border:1.5px solid var(--violet);}
   .sw.f{background:repeating-linear-gradient(135deg,#e9ebef,#e9ebef 4px,#f6f7f9 4px,#f6f7f9 8px);border:1.5px solid var(--slate);}
@@ -139,10 +147,44 @@
 
   .foot{text-align:center;font-size:10.5px;color:var(--muted);margin-top:26px;}
   .err{max-width:600px;margin:60px auto;text-align:center;color:var(--ink2);font-size:14px;}
+
   @media(max-width:820px){
     .r4{grid-template-columns:repeat(2,1fr);}
     .r2,.r2e{grid-template-columns:1fr;}
     .hg{grid-template-columns:1fr 1fr;}
+  }
+
+  @media(max-width:600px){
+    body{padding:16px 12px 30px;}
+    .wrap{max-width:100%;}
+    .top{gap:10px;}
+    .ttl .ic{width:38px;height:38px;font-size:19px;}
+    h1{font-size:19px;}
+    .pill{font-size:11px;padding:6px 11px;}
+    .card{padding:15px 15px;}
+    .row{gap:12px;margin-bottom:12px;}
+
+    .r4{grid-template-columns:1fr 1fr;gap:10px;}
+    .kpi .k-val{font-size:24px;word-break:break-word;}
+    .kpi .k-label{font-size:11px;}
+    .kpi .k-foot{font-size:10px;}
+
+    .banner{flex-direction:row;font-size:11.5px;padding:11px 14px;}
+
+    .hb{grid-template-columns:60px 1fr;gap:8px;}
+    .hb .nm{font-size:11px;}
+    .lg{gap:10px;font-size:10px;}
+
+    .donut-wrap{flex-direction:column;align-items:flex-start;gap:14px;}
+    .donut{align-self:center;}
+
+    .hg{grid-template-columns:1fr;}
+
+    ol.fc li,ul.au li{font-size:12px;}
+  }
+
+  @media(max-width:360px){
+    .r4{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -171,8 +213,104 @@ function esc(s){
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+let appData = null;
+let receivedMode = 'mtd';
+
+function fmtUsd(n){
+  const hasCents = Math.round(n * 100) % 100 !== 0;
+  return '$' + n.toLocaleString('en-US', { minimumFractionDigits: hasCents ? 2 : 0, maximumFractionDigits: 2 });
+}
+
+function monthName(){
+  return new Date().toLocaleString('en-US', { month: 'long' });
+}
+
+function computeReceived(mode, transactions){
+  const now = new Date();
+  const y = now.getFullYear(), m = now.getMonth();
+  const items = mode === 'mtd'
+    ? transactions.filter(t => {
+        const dt = new Date(t.date + 'T00:00:00');
+        return dt.getFullYear() === y && dt.getMonth() === m;
+      })
+    : transactions.slice();
+  const total = items.reduce((s, t) => s + t.amount, 0);
+  return { items, total };
+}
+
+function modeToggleHtml(){
+  return `<span class="mode-toggle">
+    <button type="button" data-mode="mtd" class="${receivedMode === 'mtd' ? 'active' : ''}">MTD</button><button type="button" data-mode="all" class="${receivedMode === 'all' ? 'active' : ''}">All time</button>
+  </span>`;
+}
+
+function receivedKpiHtml(d){
+  const { items, total } = computeReceived(receivedMode, d.received.transactions);
+  const label = receivedMode === 'mtd' ? `Received — ${monthName()} MTD` : 'Received — all time';
+  const foot = items.length
+    ? items.map(t => `${t.label} ${fmtUsd(t.amount)}`).join(' + ')
+    : (receivedMode === 'mtd' ? `No receipts yet this ${monthName()}` : 'No receipts recorded');
+  return `
+    <div class="card kpi g">
+      <div class="k-bar"></div>
+      <div class="k-label-row"><span class="k-label">${esc(label)}</span>${modeToggleHtml()}</div>
+      <div class="k-val">${fmtUsd(total)}</div>
+      <div class="k-foot">${esc(foot)}</div>
+    </div>`;
+}
+
+function receivedDonutHtml(d){
+  const { items, total } = computeReceived(receivedMode, d.received.transactions);
+  const CIRC = 339.29;
+  let offset = 0, circles = '', legend = '';
+  if (total > 0) {
+    items.forEach(t => {
+      const len = (t.amount / total * CIRC).toFixed(2);
+      circles += `<circle cx="66" cy="66" r="54" fill="none" stroke="${esc(t.color)}" stroke-width="22"
+        stroke-dasharray="${len} ${CIRC}" stroke-dashoffset="${(-offset).toFixed(2)}"></circle>`;
+      offset += parseFloat(len);
+      legend += `<div class="li"><span class="dot" style="background:${esc(t.color)}"></span><span class="nm">${esc(t.label)}<br><span style="color:var(--muted);font-size:10.5px;">${esc(t.sublabel || '')}</span></span><span class="amt">${fmtUsd(t.amount)}</span></div>`;
+    });
+  } else {
+    circles = `<circle cx="66" cy="66" r="54" fill="none" stroke="#e9ebef" stroke-width="22"></circle>`;
+    legend = `<div style="font-size:12px;color:var(--muted);">${receivedMode === 'mtd' ? `No receipts yet this ${monthName()}.` : 'No receipts recorded.'}</div>`;
+  }
+  const totalLabel = total >= 1000 ? '$' + (total / 1000).toFixed(total % 1000 === 0 ? 0 : 2) + 'k' : fmtUsd(total);
+  return `
+    <div class="card">
+      <div class="k-label-row" style="margin-bottom:2px;"><h3 style="margin-bottom:0;">Received — breakdown</h3>${modeToggleHtml()}</div>
+      <div class="cap">${receivedMode === 'mtd' ? monthName() + ' · confirmed cash in hand' : 'All-time · confirmed cash in hand'}</div>
+      <div class="donut-wrap">
+        <svg class="donut" width="132" height="132" viewBox="0 0 132 132">
+          <g transform="rotate(-90 66 66)">
+            <circle cx="66" cy="66" r="54" fill="none" stroke="#eef0f3" stroke-width="22"></circle>
+            ${circles}
+          </g>
+          <text x="66" y="62" text-anchor="middle" font-size="20" font-weight="800" fill="#0f1115">${esc(totalLabel)}</text>
+          <text x="66" y="80" text-anchor="middle" font-size="9.5" fill="#8b909a">received</text>
+        </svg>
+        <div class="dleg">${legend}</div>
+      </div>
+      <div class="foot-note">${esc(d.received.note)}</div>
+    </div>`;
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.mode-toggle button[data-mode]');
+  if (!btn || !appData) return;
+  const mode = btn.dataset.mode;
+  if (mode === receivedMode) return;
+  receivedMode = mode;
+  const kpiSlot = document.getElementById('receivedKpiSlot');
+  const donutSlot = document.getElementById('donutSlot');
+  if (kpiSlot) kpiSlot.innerHTML = receivedKpiHtml(appData);
+  if (donutSlot) donutSlot.innerHTML = receivedDonutHtml(appData);
+});
+
 function render(d){
   const app = document.getElementById('app');
+  appData = d;
+  receivedMode = (d.received && d.received.defaultMode) || 'mtd';
 
   const kpis = d.kpis.map(k => `
     <div class="card kpi ${esc(k.color)}"><div class="k-bar"></div>
@@ -185,13 +323,6 @@ function render(d){
 
   const bars = d.revenueBars.map(b => `
     <div class="hb"><div class="nm">${esc(b.name)}</div><div class="tr"><div class="fl ${esc(b.style)}" style="width:${b.widthPct}%"><span class="v">${esc(b.value)}</span></div></div></div>`).join('');
-
-  const donutCircles = d.donut.slices.map(s => `
-    <circle cx="66" cy="66" r="54" fill="none" stroke="${esc(s.color)}" stroke-width="22"
-      stroke-dasharray="${esc(s.dasharray)}" stroke-dashoffset="${esc(s.dashoffset)}"></circle>`).join('');
-
-  const donutLegend = d.donut.slices.map(s => `
-    <div class="li"><span class="dot" style="background:${esc(s.color)}"></span><span class="nm">${esc(s.name)}</span><span class="amt">${esc(s.amount)}</span></div>`).join('');
 
   const health = d.campaigns.map(c => `
     <div class="hc ${esc(c.style)}"><div class="hn">${esc(c.icon)} ${esc(c.name)}</div><div class="hs">${esc(c.status)}</div><div class="hd">${esc(c.detail)}</div></div>`).join('');
@@ -226,7 +357,7 @@ function render(d){
     <div class="pill"><b>● Live &amp; synced</b> &nbsp;·&nbsp; Last SYNC ${esc(d.meta.lastSync)}</div>
   </div>
 
-  <div class="row r4">${kpis}</div>
+  <div class="row r4"><div id="receivedKpiSlot">${receivedKpiHtml(d)}</div>${kpis}</div>
 
   ${banner}
 
@@ -244,22 +375,7 @@ function render(d){
       <div class="foot-note"><b>Not charted:</b> ${esc(d.revenueNote)}</div>
     </div>
 
-    <div class="card">
-      <h3>Received to date — breakdown</h3>
-      <div class="cap">Confirmed cash in hand</div>
-      <div class="donut-wrap">
-        <svg class="donut" width="132" height="132" viewBox="0 0 132 132">
-          <g transform="rotate(-90 66 66)">
-            <circle cx="66" cy="66" r="54" fill="none" stroke="#eef0f3" stroke-width="22"></circle>
-            ${donutCircles}
-          </g>
-          <text x="66" y="62" text-anchor="middle" font-size="20" font-weight="800" fill="#0f1115">${esc(d.donut.totalLabel)}</text>
-          <text x="66" y="80" text-anchor="middle" font-size="9.5" fill="#8b909a">${esc(d.donut.totalSub)}</text>
-        </svg>
-        <div class="dleg">${donutLegend}</div>
-      </div>
-      <div class="foot-note">${esc(d.donut.note)}</div>
-    </div>
+    <div id="donutSlot">${receivedDonutHtml(d)}</div>
   </div>
 
   <div class="row">
