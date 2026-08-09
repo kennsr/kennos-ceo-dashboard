@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "title": "KennOS — CEO Dashboard",
+    "subtitle": "UGC campaign business · one-screen view",
+    "lastSync": "2026-08-10"
+  },
+  "kpis": [
+    { "label": "Received to date", "value": "$1,240", "foot": "Airlearn #1 $1,000 + 10x final $240", "color": "g" },
+    { "label": "Pending — Airlearn final", "value": "$2,733.33", "foot": "🟡 Not arrived yet · expected this month", "color": "b" },
+    { "label": "Phrasly · Aug forecast", "value": "~$3,115", "foot": "$315 booked · $4,200/mo potential run-rate", "color": "v" },
+    { "label": "Campaigns", "value": "10", "foot": "4 active · 2 upcoming · 1 closed · 1 terminated · 1 cancelled · 1 unknown", "color": "s" }
+  ],
+  "septemberBanner": {
+    "text": "September forecast: Bettr $750 + Hype $750 = $1,500 fixed pay — neither campaign has started yet, so this is expected to land as next month's (Sept) payment, not August's."
+  },
+  "revenueBars": [
+    { "name": "Phrasly", "value": "~$3,115", "widthPct": 100, "style": "u" },
+    { "name": "Airlearn", "value": "$2,733.33", "widthPct": 87.8, "style": "u" },
+    { "name": "Bettr", "value": "$750", "widthPct": 24.1, "style": "f" },
+    { "name": "Hype", "value": "$750", "widthPct": 24.1, "style": "f" },
+    { "name": "10x", "value": "$240", "widthPct": 7.7, "style": "c" },
+    { "name": "Wron", "value": "TBD", "widthPct": 14, "style": "q" },
+    { "name": "CTO.new", "value": "TBD", "widthPct": 14, "style": "q" },
+    { "name": "Polifly", "value": "TBD", "widthPct": 14, "style": "q" }
+  ],
+  "revenueNote": "Not charted: Travelink — cancelled, $0 forecast · Freebuff — unknown, stale, needs data capture.",
+  "donut": {
+    "totalLabel": "$1.24k",
+    "totalSub": "received",
+    "slices": [
+      { "name": "Airlearn #1 (12 Jul)", "amount": "$1,000", "color": "#2a78d6", "dasharray": "273.63 339.29", "dashoffset": "0" },
+      { "name": "10x final settlement", "amount": "$240", "color": "#f0a516", "dasharray": "65.66 339.29", "dashoffset": "-273.63" }
+    ],
+    "note": "Airlearn's $2,733.33 final payment and Phrasly's ~$3,115 Aug forecast are not yet in hand — tracked separately above."
+  },
+  "campaigns": [
+    { "icon": "🟢", "name": "Phrasly", "status": "Active · ramping (new)", "detail": "$315 booked so far. ~$140/wk at 4 vids/day (≥1k views/platform) → ~$3,115 forecast for Aug. $4,200/mo potential at full scale.", "style": "ok" },
+    { "icon": "🟡", "name": "Wron", "status": "Active · pre-payment", "detail": "Not yet eligible for payout — needs to reach 45 videos.", "style": "wm" },
+    { "icon": "⚪", "name": "CTO.new", "status": "Active · earnings unknown", "detail": "Pay-per-view, budget-capped. August earnings not yet visible.", "style": "un" },
+    { "icon": "⚪", "name": "Polifly", "status": "Active · earnings unknown", "detail": "August earnings not yet visible. Needs data capture.", "style": "un" },
+    { "icon": "🔵", "name": "Bettr", "status": "Not started · upcoming", "detail": "Fixed $750/mo. Not yet launched — first payment expected to count toward September.", "style": "rd" },
+    { "icon": "🔵", "name": "Hype", "status": "Not started · upcoming", "detail": "Fixed $750/mo. Not yet launched — first payment expected to count toward September.", "style": "rd" },
+    { "icon": "✅", "name": "Airlearn", "status": "Closed · contract fulfilled", "detail": "$1,000 paid 12 Jul. Final payment $2,733.33 pending, expected to arrive this month.", "style": "cl" },
+    { "icon": "⛔", "name": "10x", "status": "Terminated · settled", "detail": "Hidden clause: terminating before 30 videos drops rate to $10/video (from $15). 24 uploaded at termination → $240 collected.", "style": "tm" },
+    { "icon": "❌", "name": "Travelink", "status": "Cancelled", "detail": "Contract cancelled. $0 forecast going forward.", "style": "cx" },
+    { "icon": "⚪", "name": "Freebuff", "status": "Unknown · stale", "detail": "No update this cycle. Needs full data capture.", "style": "un" }
+  ],
+  "paymentProgress": [
+    { "label": "10x — final settlement", "pct": 100, "color": "var(--green)" },
+    { "label": "Airlearn — of $3,733.33 total", "pct": 27, "color": "var(--blue)" },
+    { "label": "Phrasly — of ~$3,115 Aug forecast", "pct": 10, "color": "var(--violet)" },
+    { "label": "Wron — below payout threshold", "pct": 0, "color": "var(--amber)" }
+  ],
+  "paymentProgressNote": "CTO.new & Polifly — earnings not yet visible · Travelink — cancelled · Bettr & Hype — not started (counts toward Sept).",
+  "timelineAugust": [
+    { "dotClass": "a", "window": "~Aug 2026 · 🟡 pending arrival", "headline": "Airlearn final payment", "amount": "$2,733.33", "sub": "Contract closed; payment not yet arrived" },
+    { "dotClass": "c", "window": "Ramping · 🟢 forecast", "headline": "Phrasly", "amount": "~$3,115", "sub": "$315 booked; ~$140/wk pace if it holds" },
+    { "dotClass": "d", "window": "Blocked · ⚪ no date", "headline": "Wron", "amount": "$0 for now", "sub": "Needs 45 videos to reach payout threshold" },
+    { "dotClass": "d", "window": "TBD · ⚪ unknown", "headline": "CTO.new + Polifly", "amount": "unknown", "sub": "August earnings not yet visible for either" }
+  ],
+  "timelineSeptember": [
+    { "dotClass": "b", "window": "Sept 2026 · 🔵 forecast", "headline": "Bettr + Hype", "amount": "$1,500", "sub": "$750 each, fixed pay — both pending campaign start" }
+  ],
+  "focus": [
+    "Track Airlearn's final payment ($2,733.33) — confirm arrival this month",
+    "Push Wron to the 45-video payout threshold",
+    "Scale Phrasly to hit the ~$3,115 August forecast (4 vids/day, ≥1k views on ≥1 platform)",
+    "Get earnings visibility into Polifly and CTO.new for August",
+    "Prep Bettr & Hype for launch — first fixed $750 payments target September"
+  ],
+  "audit": [
+    { "b": "Airlearn:", "t": "confirm final payment date/method for $2,733.33" },
+    { "b": "Wron:", "t": "videos remaining to reach the 45-video threshold" },
+    { "b": "Polifly:", "t": "no earnings visibility yet for August" },
+    { "b": "CTO.new:", "t": "no earnings visibility yet for August" },
+    { "b": "Phrasly:", "t": "confirm the ~$140/7-day pace holds; validate $4,200/mo run-rate assumption" },
+    { "b": "Bettr / Hype:", "t": "confirm start dates + first payment timing (targeting Sept)" },
+    { "b": "Freebuff:", "t": "still no data captured, stale since last cycle" }
+  ],
+  "footer": "KennOS · AI COO · figures carry status: ✅ Verified · 🟡 Estimated/Pending · 🔵 Forecast · ⚪ Unknown/TBD"
+}
