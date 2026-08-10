@@ -28,7 +28,7 @@
     "note": "Airlearn's $2,733.33 final payment and Phrasly's ~$3,115 Aug forecast are not yet in hand — tracked separately above.",
     "transactions": [
       { "label": "Airlearn #1", "sublabel": "paid 12 Jul", "amount": 1000, "date": "2026-07-12", "color": "#2a78d6" },
-      { "label": "10x final settlement", "sublabel": "collected — CONFIRM DATE", "amount": 240, "date": "2026-07-28", "color": "#f0a516" }
+      { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" }
     ]
   },
   "campaigns": [
