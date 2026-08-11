@@ -7,7 +7,7 @@
   "kpis": [
     { "label": "Pending — Airlearn final", "value": "$2,733.33", "foot": "🟡 Not arrived yet · expected this month", "color": "b" },
     { "label": "Phrasly · Aug forecast", "value": "~$3,115", "foot": "$315 booked · $4,200/mo potential run-rate", "color": "v" },
-    { "label": "Campaigns", "value": "10", "foot": "4 active · 2 upcoming · 1 closed · 1 terminated · 1 cancelled · 1 unknown", "color": "s" }
+    { "label": "Campaigns", "value": "10", "foot": "3 active · 2 upcoming · 1 closed · 2 terminated · 1 cancelled · 1 unknown", "color": "s" }
   ],
   "septemberBanner": {
     "text": "September forecast: Bettr $750 + Hype $750 = $1,500 fixed pay — neither campaign has started yet, so this is expected to land as next month's (Sept) payment, not August's."
@@ -18,7 +18,7 @@
     { "name": "Bettr", "value": "$750", "widthPct": 24.1, "style": "f" },
     { "name": "Hype", "value": "$750", "widthPct": 24.1, "style": "f" },
     { "name": "10x", "value": "$240", "widthPct": 7.7, "style": "c" },
-    { "name": "Wron", "value": "TBD", "widthPct": 14, "style": "q" },
+    { "name": "Wron", "value": "$285", "widthPct": 9.2, "style": "c" },
     { "name": "CTO.new", "value": "TBD", "widthPct": 14, "style": "q" },
     { "name": "Polifly", "value": "$77", "widthPct": 4, "style": "c" }
   ],
@@ -33,12 +33,13 @@
       { "label": "Heyclicky", "sublabel": "closed — campaign stopped · PLACEHOLDER DATE", "amount": 861, "date": "2026-07-18", "color": "#6b4ff0" },
       { "label": "Polifly — Jul payment", "sublabel": "~$1,000 approx · PLACEHOLDER DATE", "amount": 1000, "date": "2026-07-25", "color": "#0ca30c" },
       { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" },
-      { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" }
+      { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" },
+      { "label": "Wron final settlement", "sublabel": "dropped, before 45-video threshold", "amount": 285, "date": "2026-08-10", "color": "#e0524d" }
     ]
   },
   "campaigns": [
     { "icon": "🟢", "name": "Phrasly", "status": "Active · ramping (new)", "detail": "$315 booked so far. ~$140/wk at 4 vids/day (≥1k views/platform) → ~$3,115 forecast for Aug. $4,200/mo potential at full scale.", "style": "ok" },
-    { "icon": "🟡", "name": "Wron", "status": "Active · pre-payment", "detail": "Not yet eligible for payout — needs to reach 45 videos.", "style": "wm" },
+    { "icon": "⛔", "name": "Wron", "status": "Dropped · settled", "detail": "Campaign dropped before reaching the 45-video threshold. Final payment: $285 collected.", "style": "tm" },
     { "icon": "⚪", "name": "CTO.new", "status": "Active · earnings unknown", "detail": "Pay-per-view, budget-capped. August earnings not yet visible.", "style": "un" },
     { "icon": "🟢", "name": "Polifly", "status": "Active · first payment in", "detail": "Week 1 payment: $77. Rest of August still ramping — more weekly payments expected.", "style": "ok" },
     { "icon": "🔵", "name": "Bettr", "status": "Not started · upcoming", "detail": "Fixed $750/mo. Not yet launched — first payment expected to count toward September.", "style": "rd" },
@@ -52,14 +53,14 @@
     { "label": "10x — final settlement", "pct": 100, "color": "var(--green)" },
     { "label": "Airlearn — of $3,733.33 total", "pct": 27, "color": "var(--blue)" },
     { "label": "Phrasly — of ~$3,115 Aug forecast", "pct": 10, "color": "var(--violet)" },
-    { "label": "Wron — below payout threshold", "pct": 0, "color": "var(--amber)" }
+    { "label": "Wron — dropped, final settlement", "pct": 100, "color": "var(--red)" }
   ],
   "paymentProgressNote": "CTO.new — earnings not yet visible · Polifly — week 1 of ~4-5 in, pace still ramping · Travelink — cancelled · Bettr & Hype — not started (counts toward Sept).",
   "timelineAugust": [
     { "dotClass": "a", "window": "~Aug 2026 · 🟡 pending arrival", "headline": "Airlearn final payment", "amount": "$2,733.33", "sub": "Contract closed; payment not yet arrived" },
     { "dotClass": "c", "window": "Ramping · 🟢 forecast", "headline": "Phrasly", "amount": "~$3,115", "sub": "$315 booked; ~$140/wk pace if it holds" },
     { "dotClass": "c", "window": "Week 1 · 🟢 received", "headline": "Polifly", "amount": "$77", "sub": "First weekly payment in; more weeks expected before Aug closes" },
-    { "dotClass": "d", "window": "Blocked · ⚪ no date", "headline": "Wron", "amount": "$0 for now", "sub": "Needs 45 videos to reach payout threshold" },
+    { "dotClass": "e", "window": "This month · 🔴 dropped, settled", "headline": "Wron", "amount": "$285", "sub": "Dropped before reaching the 45-video threshold; final payment collected" },
     { "dotClass": "d", "window": "TBD · ⚪ unknown", "headline": "CTO.new", "amount": "unknown", "sub": "August earnings not yet visible" }
   ],
   "timelineSeptember": [
@@ -67,14 +68,14 @@
   ],
   "focus": [
     "Track Airlearn's final payment ($2,733.33) — confirm arrival this month",
-    "Push Wron to the 45-video payout threshold",
+    "Confirm Wron is fully closed out — $285 final payment collected, no further deliverables owed",
     "Scale Phrasly to hit the ~$3,115 August forecast (4 vids/day, ≥1k views on ≥1 platform)",
     "Track Polifly's weekly payments (week 1: $77) and get CTO.new visibility for August",
     "Prep Bettr & Hype for launch — first fixed $750 payments target September"
   ],
   "audit": [
     { "b": "Airlearn:", "t": "confirm final payment date/method for $2,733.33" },
-    { "b": "Wron:", "t": "videos remaining to reach the 45-video threshold" },
+    { "b": "Wron:", "t": "confirm campaign is fully closed out, no additional payments owed beyond $285" },
     { "b": "Polifly:", "t": "week 1 payment $77 in — track remaining weeks toward an August total" },
     { "b": "CTO.new:", "t": "no earnings visibility yet for August" },
     { "b": "Phrasly:", "t": "confirm the ~$140/7-day pace holds; validate $4,200/mo run-rate assumption" },
