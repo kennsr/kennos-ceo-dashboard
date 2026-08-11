@@ -25,11 +25,15 @@
   "revenueNote": "Not charted: Travelink — cancelled, $0 forecast · Freebuff — unknown, stale, needs data capture.",
   "received": {
     "defaultMode": "mtd",
-    "note": "Airlearn's $2,733.33 final payment and Phrasly's ~$3,115 Aug forecast are not yet in hand — tracked separately above.",
+    "note": "Airlearn's $2,733.33 final payment and Phrasly's ~$3,115 Aug forecast are not yet in hand — tracked separately above. Motion and Heyclicky are closed/inactive campaigns kept here only as historical cash received, not tracked in Campaign Health.",
     "transactions": [
-      { "label": "Airlearn #1", "sublabel": "paid 12 Jul", "amount": 1000, "date": "2026-07-12", "color": "#2a78d6" },
+      { "label": "Polifly — first payment", "sublabel": "late Jun · PLACEHOLDER DATE", "amount": 60, "date": "2026-06-25", "color": "#0ca30c" },
+      { "label": "Airlearn #1", "sublabel": "paid 12 Jul (corrected from $1,000)", "amount": 1300, "date": "2026-07-12", "color": "#2a78d6" },
+      { "label": "Motion", "sublabel": "closed — CPM too high · PLACEHOLDER DATE", "amount": 1680, "date": "2026-07-15", "color": "#9aa1ac" },
+      { "label": "Heyclicky", "sublabel": "closed — campaign stopped · PLACEHOLDER DATE", "amount": 861, "date": "2026-07-18", "color": "#6b4ff0" },
+      { "label": "Polifly — Jul payment", "sublabel": "~$1,000 approx · PLACEHOLDER DATE", "amount": 1000, "date": "2026-07-25", "color": "#0ca30c" },
       { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" },
-      { "label": "Polifly — week 1", "sublabel": "first payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" }
+      { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" }
     ]
   },
   "campaigns": [
