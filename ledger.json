@@ -14,6 +14,7 @@
     { "date": "2026-08-10", "campaign": "Polifly", "type": "payment", "amount": 77, "note": "Week 1 (August) payment." },
     { "date": "2026-08-10", "campaign": "Phrasly", "type": "status", "note": "Booked-so-far updated from $315 to $910. Pace intentionally throttled (not full 4 vids/day speed) to avoid shadow bans / high CPM that could get the campaign dropped." },
     { "date": "2026-08-10", "campaign": "CTO.new", "type": "status", "note": "$475 booked this month; campaign paused pending an internal discussion on a decision." },
-    { "date": "2026-08-10", "campaign": "Hype", "type": "status", "note": "Dropped before ever starting — crypto niche outside expertise, and pay too low ($750 for 60 videos, ~$12.50/video)." }
+    { "date": "2026-08-10", "campaign": "Hype", "type": "status", "note": "Dropped before ever starting — crypto niche outside expertise, and pay too low ($750 for 60 videos, ~$12.50/video)." },
+    { "date": "2026-08-20", "campaign": "Phrasly", "type": "payment", "amount": 290, "note": "PayPal payout confirmed received (from Phrasly LLC) — part of the $910 booked; remaining $620 still accrued/not yet paid. BACKFILL — placeholder date, confirm exact." }
   ]
 }

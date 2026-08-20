@@ -14,7 +14,7 @@
   },
   "received": {
     "defaultMode": "mtd",
-    "note": "Phrasly's $910 booked and CTO.new's $475 booked are tracked/accrued amounts, not yet confirmed as cash received — tracked separately above. Motion and Heyclicky are closed/inactive campaigns kept here only as historical cash received, not tracked in Campaign Health.",
+    "note": "Phrasly: $290 of its $910 booked has actually been paid out (via PayPal) — the remaining $620 is booked/accrued but not yet paid. CTO.new's $475 booked is still entirely accrued, not yet confirmed as cash received. Motion and Heyclicky are closed/inactive campaigns kept here only as historical cash received, not tracked in Campaign Health.",
     "transactions": [
       { "label": "Polifly — first payment", "sublabel": "late Jun · PLACEHOLDER DATE", "amount": 60, "date": "2026-06-25", "color": "#0ca30c" },
       { "label": "Airlearn #1", "sublabel": "paid 12 Jul (corrected from $1,000)", "amount": 1300, "date": "2026-07-12", "color": "#2a78d6" },
@@ -24,11 +24,12 @@
       { "label": "Airlearn — final payment", "sublabel": "arrived early this month · PLACEHOLDER DAY, confirm exact", "amount": 2733.33, "date": "2026-08-03", "color": "#2a78d6" },
       { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" },
       { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" },
-      { "label": "Wron final settlement", "sublabel": "dropped, before 45-video threshold", "amount": 285, "date": "2026-08-10", "color": "#e0524d" }
+      { "label": "Wron final settlement", "sublabel": "dropped, before 45-video threshold", "amount": 285, "date": "2026-08-10", "color": "#e0524d" },
+      { "label": "Phrasly — PayPal payout", "sublabel": "part of $910 booked · PLACEHOLDER DATE", "amount": 290, "date": "2026-08-20", "color": "#6b4ff0" }
     ]
   },
   "campaigns": [
-    { "icon": "🟢", "name": "Phrasly", "status": "Active · throttled pace", "detail": "$910 booked so far. Intentionally throttled (not full speed — 4 vids/day target) to avoid shadow bans / high CPM that could get the campaign dropped → ~$3,115 forecast for Aug. $4,200/mo potential at full scale.", "style": "ok" },
+    { "icon": "🟢", "name": "Phrasly", "status": "Active · throttled pace", "detail": "$910 booked so far — $290 of that already paid out via PayPal, remaining $620 booked/accrued but not yet paid. Intentionally throttled (not full speed — 4 vids/day target) to avoid shadow bans / high CPM that could get the campaign dropped → ~$3,115 forecast for Aug. $4,200/mo potential at full scale.", "style": "ok" },
     { "icon": "⛔", "name": "Wron", "status": "Dropped · settled", "detail": "Campaign dropped before reaching the 45-video threshold. Final payment: $285 collected.", "style": "tm" },
     { "icon": "🟡", "name": "CTO.new", "status": "Paused · internal decision", "detail": "$475 booked this month. Paused pending an internal discussion on a decision — resuming TBD.", "style": "wm" },
     { "icon": "🟢", "name": "Polifly", "status": "Active · first payment in", "detail": "Week 1 payment: $77. Rest of August still ramping — more weekly payments expected.", "style": "ok" },
