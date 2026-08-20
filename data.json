@@ -5,7 +5,7 @@
     "lastSync": "2026-08-10"
   },
   "kpis": [
-    { "label": "Airlearn — fully settled", "value": "$4,033.33", "foot": "✅ $1,300 (12 Jul) + $2,733.33 final (arrived ~weeks ago, exact date TBC)", "color": "b" },
+    { "label": "Airlearn — fully settled", "value": "$4,033.33", "foot": "✅ $1,300 (12 Jul) + $2,733.33 final (arrived early this month, exact date TBC)", "color": "b" },
     { "label": "Phrasly · Aug forecast", "value": "~$3,115", "foot": "$910 booked so far (throttled pace) · $4,200/mo potential run-rate", "color": "v" },
     { "label": "Campaigns", "value": "10", "foot": "3 active · 1 upcoming · 1 closed · 2 terminated · 2 cancelled · 1 unknown", "color": "s" }
   ],
@@ -21,7 +21,7 @@
       { "label": "Motion", "sublabel": "closed — CPM too high", "amount": 1680, "date": "2026-07-15", "color": "#9aa1ac" },
       { "label": "Heyclicky", "sublabel": "closed — campaign stopped", "amount": 861, "date": "2026-07-18", "color": "#6b4ff0" },
       { "label": "Polifly — Jul payment", "sublabel": "~$1,000 approx", "amount": 1000, "date": "2026-07-25", "color": "#0ca30c" },
-      { "label": "Airlearn — final payment", "sublabel": "arrived ~weeks ago · PLACEHOLDER DATE, confirm exact", "amount": 2733.33, "date": "2026-07-20", "color": "#2a78d6" },
+      { "label": "Airlearn — final payment", "sublabel": "arrived early this month · PLACEHOLDER DAY, confirm exact", "amount": 2733.33, "date": "2026-08-03", "color": "#2a78d6" },
       { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" },
       { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" },
       { "label": "Wron final settlement", "sublabel": "dropped, before 45-video threshold", "amount": 285, "date": "2026-08-10", "color": "#e0524d" }
@@ -34,7 +34,7 @@
     { "icon": "🟢", "name": "Polifly", "status": "Active · first payment in", "detail": "Week 1 payment: $77. Rest of August still ramping — more weekly payments expected.", "style": "ok" },
     { "icon": "🔵", "name": "Bettr", "status": "Not started · upcoming", "detail": "Fixed $750/mo. Not yet launched — first payment expected to count toward September.", "style": "rd" },
     { "icon": "❌", "name": "Hype", "status": "Dropped · never started", "detail": "Dropped before launch — crypto niche outside expertise, and pay too low ($750 for 60 videos, ~$12.50/video). $0 forecast going forward.", "style": "cx" },
-    { "icon": "✅", "name": "Airlearn", "status": "Closed · fully paid", "detail": "$1,300 paid 12 Jul + $2,733.33 final payment received ~weeks ago (exact date TBC). Contract fully settled — $4,033.33 total.", "style": "cl" },
+    { "icon": "✅", "name": "Airlearn", "status": "Closed · fully paid", "detail": "$1,300 paid 12 Jul + $2,733.33 final payment received early this month (exact date TBC). Contract fully settled — $4,033.33 total.", "style": "cl" },
     { "icon": "⛔", "name": "10x", "status": "Terminated · settled", "detail": "Hidden clause: terminating before 30 videos drops rate to $10/video (from $15). 24 uploaded at termination → $240 collected.", "style": "tm" },
     { "icon": "❌", "name": "Travelink", "status": "Cancelled", "detail": "Contract cancelled. $0 forecast going forward.", "style": "cx" },
     { "icon": "⚪", "name": "Freebuff", "status": "Unknown · stale", "detail": "No update this cycle. Needs full data capture.", "style": "un" }
@@ -47,7 +47,7 @@
     "Prep Bettr for launch — first fixed $750 payment targets September"
   ],
   "audit": [
-    { "b": "Airlearn:", "t": "confirm exact arrival date for the $2,733.33 final payment (received ~weeks ago)" },
+    { "b": "Airlearn:", "t": "confirm exact arrival date for the $2,733.33 final payment (received early this month)" },
     { "b": "Wron:", "t": "confirm campaign is fully closed out, no additional payments owed beyond $285" },
     { "b": "Polifly:", "t": "week 1 payment $77 in — track remaining weeks toward an August total" },
     { "b": "CTO.new:", "t": "paused at $475 booked pending an internal decision — confirm timeline to resume" },
