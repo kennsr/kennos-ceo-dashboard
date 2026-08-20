@@ -96,6 +96,17 @@
   ul.au li::before{content:"";position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--amber);}
   ul.au li b{color:var(--ink);font-weight:700;}
 
+  /* history */
+  .hist{display:flex;flex-direction:column;gap:2px;max-height:360px;overflow-y:auto;}
+  .hi{display:grid;grid-template-columns:78px 90px 1fr auto;gap:10px;align-items:baseline;padding:8px 4px;border-bottom:1px solid var(--grid);font-size:12px;}
+  .hi:last-child{border-bottom:none;}
+  .hi .hd8{color:var(--muted);font-variant-numeric:tabular-nums;font-size:11px;}
+  .hi .hcp{font-weight:700;}
+  .hi .hnt{color:var(--ink2);}
+  .hi .ham{font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .hi .htag{font-size:9px;font-weight:750;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);
+    background:var(--grid);border-radius:5px;padding:1px 5px;margin-left:5px;}
+
   .foot{text-align:center;font-size:10.5px;color:var(--muted);margin-top:26px;}
   .err{max-width:600px;margin:60px auto;text-align:center;color:var(--ink2);font-size:14px;}
 
@@ -125,6 +136,9 @@
     .hg{grid-template-columns:1fr;}
 
     ol.fc li,ul.au li{font-size:12px;}
+
+    .hi{grid-template-columns:1fr;gap:2px;padding:9px 4px;}
+    .hi .ham{grid-row:1;}
   }
 
   @media(max-width:360px){
@@ -140,7 +154,7 @@
 <script>
 async function loadDashboard(){
   const app = document.getElementById('app');
-  let data;
+  let data, ledger;
   try{
     const res = await fetch('./data.json', {cache:'no-store'});
     if(!res.ok) throw new Error('HTTP '+res.status);
@@ -149,7 +163,13 @@ async function loadDashboard(){
     app.innerHTML = '<div class="err">Couldn\'t load data.json (' + e.message + '). Make sure it sits next to index.html.</div>';
     return;
   }
-  render(data);
+  try{
+    const lres = await fetch('./ledger.json', {cache:'no-store'});
+    ledger = lres.ok ? await lres.json() : null;
+  }catch(e){
+    ledger = null;
+  }
+  render(data, ledger);
 }
 
 function esc(s){
@@ -213,7 +233,31 @@ document.addEventListener('click', (e) => {
   if (kpiSlot) kpiSlot.innerHTML = receivedKpiHtml(appData);
 });
 
-function render(d){
+function historyHtml(ledger){
+  if (!ledger || !ledger.entries || !ledger.entries.length) return '';
+  const entries = ledger.entries.slice().sort((a, b) => b.date.localeCompare(a.date));
+  const rows = entries.map(e => {
+    const isBackfill = /BACKFILL/.test(e.note || '');
+    const amt = (typeof e.amount === 'number') ? fmtUsd(e.amount) : '';
+    const noteClean = (e.note || '').replace(/\s*BACKFILL[^.]*\.?/, '').trim();
+    return `<div class="hi">
+      <span class="hd8">${esc(e.date)}</span>
+      <span class="hcp">${esc(e.campaign)}</span>
+      <span class="hnt">${esc(noteClean)}${isBackfill ? '<span class="htag">placeholder date</span>' : ''}</span>
+      <span class="ham">${esc(amt)}</span>
+    </div>`;
+  }).join('');
+  return `
+  <div class="row">
+    <div class="card">
+      <h3>📜 History</h3>
+      <div class="cap">Append-only log — every recorded event, oldest changes never overwritten</div>
+      <div class="hist">${rows}</div>
+    </div>
+  </div>`;
+}
+
+function render(d, ledger){
   const app = document.getElementById('app');
   appData = d;
   receivedMode = (d.received && d.received.defaultMode) || 'mtd';
@@ -271,6 +315,8 @@ function render(d){
       <ul class="au">${audit}</ul>
     </div>
   </div>
+
+  ${historyHtml(ledger)}
 
   <div class="foot">${esc(d.footer)}</div>
   `;

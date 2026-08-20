@@ -1,0 +1,18 @@
+{
+  "note": "Append-only history log. New entries get added here (never edited/deleted) alongside updates to data.json's current-state snapshot, so nothing gets silently overwritten. 'date' = when the event happened; entries below marked BACKFILL were logged retroactively on 2026-08-20 from earlier chat context, so some dates are approximate placeholders (flagged individually).",
+  "entries": [
+    { "date": "2026-06-25", "campaign": "Polifly", "type": "payment", "amount": 60, "note": "First payment (late June). BACKFILL — placeholder date, confirm exact." },
+    { "date": "2026-07-12", "campaign": "Airlearn", "type": "payment", "amount": 1000, "note": "Airlearn #1 paid. BACKFILL — later corrected, see next entry." },
+    { "date": "2026-07-12", "campaign": "Airlearn", "type": "correction", "amount": 1300, "note": "Correction: Airlearn #1 was actually $1,300, not $1,000." },
+    { "date": "2026-07-15", "campaign": "Motion", "type": "payment", "amount": 1680, "note": "Received; campaign then closed — CPM too high. BACKFILL — placeholder date, confirm exact." },
+    { "date": "2026-07-18", "campaign": "Heyclicky", "type": "payment", "amount": 861, "note": "Received; campaign then closed — stopped. BACKFILL — placeholder date, confirm exact." },
+    { "date": "2026-07-20", "campaign": "Airlearn", "type": "payment", "amount": 2733.33, "note": "Final payment arrived. BACKFILL — placeholder date ('weeks ago' as of Aug 10), confirm exact." },
+    { "date": "2026-07-25", "campaign": "Polifly", "type": "payment", "amount": 1000, "note": "July payment, ~$1,000 approx. BACKFILL — placeholder date, confirm exact." },
+    { "date": "2026-08-01", "campaign": "10x", "type": "payment", "amount": 240, "note": "Final settlement collected. Hidden clause: terminating before 30 videos drops rate to $10/video (from $15); 24 uploaded at termination." },
+    { "date": "2026-08-10", "campaign": "Wron", "type": "payment", "amount": 285, "note": "Final settlement collected. Campaign dropped before reaching the 45-video payout threshold." },
+    { "date": "2026-08-10", "campaign": "Polifly", "type": "payment", "amount": 77, "note": "Week 1 (August) payment." },
+    { "date": "2026-08-10", "campaign": "Phrasly", "type": "status", "note": "Booked-so-far updated from $315 to $910. Pace intentionally throttled (not full 4 vids/day speed) to avoid shadow bans / high CPM that could get the campaign dropped." },
+    { "date": "2026-08-10", "campaign": "CTO.new", "type": "status", "note": "$475 booked this month; campaign paused pending an internal discussion on a decision." },
+    { "date": "2026-08-10", "campaign": "Hype", "type": "status", "note": "Dropped before ever starting — crypto niche outside expertise, and pay too low ($750 for 60 videos, ~$12.50/video)." }
+  ]
+}
