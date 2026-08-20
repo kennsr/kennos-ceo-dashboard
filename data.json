@@ -23,8 +23,8 @@
       { "label": "Polifly — Jul payment", "sublabel": "~$1,000 approx", "amount": 1000, "date": "2026-07-25", "color": "#0ca30c" },
       { "label": "Airlearn — final payment", "sublabel": "arrived early this month · PLACEHOLDER DAY, confirm exact", "amount": 2733.33, "date": "2026-08-03", "color": "#2a78d6" },
       { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" },
-      { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" },
-      { "label": "Wron final settlement", "sublabel": "dropped, before 45-video threshold", "amount": 285, "date": "2026-08-10", "color": "#e0524d" },
+      { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment · via Noam Ayalon", "amount": 77.17, "date": "2026-08-10", "color": "#0ca30c" },
+      { "label": "Wron final settlement", "sublabel": "dropped, before 45-video threshold · via BoxChannels LLC", "amount": 285, "date": "2026-08-10", "color": "#e0524d" },
       { "label": "Phrasly — PayPal payout", "sublabel": "part of $910 booked · PLACEHOLDER DATE", "amount": 290, "date": "2026-08-20", "color": "#6b4ff0" }
     ]
   },
@@ -32,7 +32,7 @@
     { "icon": "🟢", "name": "Phrasly", "status": "Active · throttled pace", "detail": "$910 booked so far — $290 of that already paid out via PayPal, remaining $620 booked/accrued but not yet paid. Intentionally throttled (not full speed — 4 vids/day target) to avoid shadow bans / high CPM that could get the campaign dropped → ~$3,115 forecast for Aug. $4,200/mo potential at full scale.", "style": "ok" },
     { "icon": "⛔", "name": "Wron", "status": "Dropped · settled", "detail": "Campaign dropped before reaching the 45-video threshold. Final payment: $285 collected.", "style": "tm" },
     { "icon": "🟡", "name": "CTO.new", "status": "Paused · internal decision", "detail": "$475 booked this month. Paused pending an internal discussion on a decision — resuming TBD.", "style": "wm" },
-    { "icon": "🟢", "name": "Polifly", "status": "Active · first payment in", "detail": "Week 1 payment: $77. Rest of August still ramping — more weekly payments expected.", "style": "ok" },
+    { "icon": "🟢", "name": "Polifly", "status": "Active · first payment in", "detail": "Week 1 payment: $77.17. Rest of August still ramping — more weekly payments expected.", "style": "ok" },
     { "icon": "🔵", "name": "Bettr", "status": "Not started · upcoming", "detail": "Fixed $750/mo. Not yet launched — first payment expected to count toward September.", "style": "rd" },
     { "icon": "❌", "name": "Hype", "status": "Dropped · never started", "detail": "Dropped before launch — crypto niche outside expertise, and pay too low ($750 for 60 videos, ~$12.50/video). $0 forecast going forward.", "style": "cx" },
     { "icon": "✅", "name": "Airlearn", "status": "Closed · fully paid", "detail": "$1,300 paid 12 Jul + $2,733.33 final payment received early this month (exact date TBC). Contract fully settled — $4,033.33 total.", "style": "cl" },
@@ -44,13 +44,13 @@
     "Confirm the exact date the $2,733.33 Airlearn final payment landed, for clean books",
     "Confirm Wron is fully closed out — $285 final payment collected, no further deliverables owed",
     "Keep Phrasly's pace throttled ($910 booked so far) to avoid shadow bans/high CPM, while still tracking toward the ~$3,115 August forecast",
-    "Resolve the internal decision blocking CTO.new ($475 booked, paused) and track Polifly's weekly payments (week 1: $77)",
+    "Resolve the internal decision blocking CTO.new ($475 booked, paused) and track Polifly's weekly payments (week 1: $77.17)",
     "Prep Bettr for launch — first fixed $750 payment targets September"
   ],
   "audit": [
     { "b": "Airlearn:", "t": "confirm exact arrival date for the $2,733.33 final payment (received early this month)" },
     { "b": "Wron:", "t": "confirm campaign is fully closed out, no additional payments owed beyond $285" },
-    { "b": "Polifly:", "t": "week 1 payment $77 in — track remaining weeks toward an August total" },
+    { "b": "Polifly:", "t": "week 1 payment $77.17 in — track remaining weeks toward an August total" },
     { "b": "CTO.new:", "t": "paused at $475 booked pending an internal decision — confirm timeline to resume" },
     { "b": "Phrasly:", "t": "confirm the throttled pace ($910 so far) still reaches ~$3,115 Aug forecast without triggering shadow bans" },
     { "b": "Bettr:", "t": "confirm start date + first payment timing (targeting Sept)" },
