@@ -18,9 +18,9 @@
     "transactions": [
       { "label": "Polifly — first payment", "sublabel": "late Jun · PLACEHOLDER DATE", "amount": 60, "date": "2026-06-25", "color": "#0ca30c" },
       { "label": "Airlearn #1", "sublabel": "paid 12 Jul (corrected from $1,000)", "amount": 1300, "date": "2026-07-12", "color": "#2a78d6" },
-      { "label": "Motion", "sublabel": "closed — CPM too high · PLACEHOLDER DATE", "amount": 1680, "date": "2026-07-15", "color": "#9aa1ac" },
-      { "label": "Heyclicky", "sublabel": "closed — campaign stopped · PLACEHOLDER DATE", "amount": 861, "date": "2026-07-18", "color": "#6b4ff0" },
-      { "label": "Polifly — Jul payment", "sublabel": "~$1,000 approx · PLACEHOLDER DATE", "amount": 1000, "date": "2026-07-25", "color": "#0ca30c" },
+      { "label": "Motion", "sublabel": "closed — CPM too high", "amount": 1680, "date": "2026-07-15", "color": "#9aa1ac" },
+      { "label": "Heyclicky", "sublabel": "closed — campaign stopped", "amount": 861, "date": "2026-07-18", "color": "#6b4ff0" },
+      { "label": "Polifly — Jul payment", "sublabel": "~$1,000 approx", "amount": 1000, "date": "2026-07-25", "color": "#0ca30c" },
       { "label": "Airlearn — final payment", "sublabel": "arrived ~weeks ago · PLACEHOLDER DATE, confirm exact", "amount": 2733.33, "date": "2026-07-20", "color": "#2a78d6" },
       { "label": "10x final settlement", "sublabel": "collected", "amount": 240, "date": "2026-08-01", "color": "#f0a516" },
       { "label": "Polifly — week 1 (Aug)", "sublabel": "first Aug payment", "amount": 77, "date": "2026-08-10", "color": "#0ca30c" },
