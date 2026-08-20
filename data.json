@@ -12,16 +12,6 @@
   "septemberBanner": {
     "text": "September forecast: Bettr $750 fixed pay — hasn't started yet, so this is expected to land as next month's (Sept) payment, not August's."
   },
-  "revenueBars": [
-    { "name": "Airlearn", "value": "$4,033.33", "widthPct": 100, "style": "c" },
-    { "name": "Phrasly", "value": "~$3,115", "widthPct": 77.2, "style": "u" },
-    { "name": "Bettr", "value": "$750", "widthPct": 18.6, "style": "f" },
-    { "name": "CTO.new", "value": "$475", "widthPct": 11.8, "style": "u" },
-    { "name": "Wron", "value": "$285", "widthPct": 7.1, "style": "c" },
-    { "name": "10x", "value": "$240", "widthPct": 6, "style": "c" },
-    { "name": "Polifly", "value": "$77", "widthPct": 3, "style": "c" }
-  ],
-  "revenueNote": "Not charted: Travelink — cancelled, $0 forecast · Hype — dropped before starting (crypto niche, pay too low), $0 forecast · Freebuff — unknown, stale, needs data capture.",
   "received": {
     "defaultMode": "mtd",
     "note": "Phrasly's $910 booked and CTO.new's $475 booked are tracked/accrued amounts, not yet confirmed as cash received — tracked separately above. Motion and Heyclicky are closed/inactive campaigns kept here only as historical cash received, not tracked in Campaign Health.",
@@ -48,22 +38,6 @@
     { "icon": "⛔", "name": "10x", "status": "Terminated · settled", "detail": "Hidden clause: terminating before 30 videos drops rate to $10/video (from $15). 24 uploaded at termination → $240 collected.", "style": "tm" },
     { "icon": "❌", "name": "Travelink", "status": "Cancelled", "detail": "Contract cancelled. $0 forecast going forward.", "style": "cx" },
     { "icon": "⚪", "name": "Freebuff", "status": "Unknown · stale", "detail": "No update this cycle. Needs full data capture.", "style": "un" }
-  ],
-  "paymentProgress": [
-    { "label": "10x — final settlement", "pct": 100, "color": "var(--green)" },
-    { "label": "Airlearn — fully received ($4,033.33 total)", "pct": 100, "color": "var(--blue)" },
-    { "label": "Phrasly — of ~$3,115 Aug forecast", "pct": 29, "color": "var(--violet)" },
-    { "label": "Wron — dropped, final settlement", "pct": 100, "color": "var(--red)" }
-  ],
-  "paymentProgressNote": "CTO.new — $475 booked this month, paused pending an internal decision · Polifly — week 1 of ~4-5 in, pace still ramping · Travelink & Hype — cancelled/dropped · Bettr — not started (counts toward Sept).",
-  "timelineAugust": [
-    { "dotClass": "c", "window": "Ramping · 🟢 forecast", "headline": "Phrasly", "amount": "~$3,115", "sub": "$910 booked; pace intentionally throttled to avoid shadow bans / high CPM risk" },
-    { "dotClass": "c", "window": "Week 1 · 🟢 received", "headline": "Polifly", "amount": "$77", "sub": "First weekly payment in; more weeks expected before Aug closes" },
-    { "dotClass": "e", "window": "This month · 🔴 dropped, settled", "headline": "Wron", "amount": "$285", "sub": "Dropped before reaching the 45-video threshold; final payment collected" },
-    { "dotClass": "a", "window": "Paused · 🟡 internal decision", "headline": "CTO.new", "amount": "$475 booked", "sub": "Paused pending an internal discussion on a decision; resuming TBD" }
-  ],
-  "timelineSeptember": [
-    { "dotClass": "b", "window": "Sept 2026 · 🔵 forecast", "headline": "Bettr", "amount": "$750", "sub": "Fixed pay — pending campaign start" }
   ],
   "focus": [
     "Confirm the exact date the $2,733.33 Airlearn final payment landed, for clean books",
